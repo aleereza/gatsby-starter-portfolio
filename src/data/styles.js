@@ -1,17 +1,13 @@
 import { css } from "@emotion/core"
 
-export const container = css`
+export const containerOutStyle = css`
+  margin: 0;
+  width: 100%;
+`
+export const containerInStyle = css`
   max-width: 1280px;
   margin: 0 auto;
-  width: 90%;
-
-  @media (min-width: 480px) {
-    width: 90%;
-  }
-
-  @media (min-width: 800px) {
-    width: 80%;
-  }
+  padding: 0 1rem;
 `
 
 export const global = css`

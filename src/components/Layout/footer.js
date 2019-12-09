@@ -1,6 +1,17 @@
 import React from "react"
-import { container } from "../../data/styles"
+import { css } from "@emotion/core"
+import { containerInStyle, containerOutStyle } from "../../data/styles"
 
-const Footer = () => <footer css={container}>footer</footer>
+const footerStyle = css`
+  position: fixed;
+  bottom: 0;
+  background-color: lightgray;
+`
+
+const Footer = () => (
+  <footer css={[containerOutStyle, footerStyle]}>
+    <div css={containerInStyle}>footer</div>
+  </footer>
+)
 
 export default Footer

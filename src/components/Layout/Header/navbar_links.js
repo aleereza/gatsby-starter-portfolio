@@ -27,20 +27,29 @@ const wrapperStyle = css`
     }
   }
 `
-const linkStyle = css``
+// const linkStyle = css`
+//   color: red;
+// `
 
-const NavbarLinks = () => (
-  <div css={wrapperStyle}>
-    {navbarLinks.map((item, index) => (
-      <Link css={linkStyle} key={index} to={`${item.path}`}>
-        {item.text}
-      </Link>
-    ))}
-  </div>
-)
+const linkActiveStyle = {
+  backgroundColor: "red",
+}
+
+const NavbarLinks = ({ toggle }) => {
+  return (
+    <div css={wrapperStyle}>
+      {navbarLinks.map((item, index) => (
+        <Link
+          key={index}
+          to={`${item.path}`}
+          onClick={toggle}
+          activeStyle={linkActiveStyle}
+        >
+          {item.text}
+        </Link>
+      ))}
+    </div>
+  )
+}
 
 export default NavbarLinks
-
-//<AnchorLink href="#about">About</AnchorLink>
-//<AnchorLink href="#projects">Projects</AnchorLink>
-//<AnchorLink href="#contact">Contact</AnchorLink>

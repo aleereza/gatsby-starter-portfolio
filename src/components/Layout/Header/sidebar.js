@@ -2,7 +2,7 @@ import React from "react"
 import NavbarLinks from "./navbar_links"
 import { css } from "@emotion/core"
 
-const Sidebar = ({ status }) => {
+const Sidebar = ({ status, toggle }) => {
   const wrapperStyle = css`
     position: fixed;
     z-index: 4;
@@ -32,7 +32,7 @@ const Sidebar = ({ status }) => {
   `
   return (
     <nav css={wrapperStyle}>
-      <NavbarLinks />
+      <NavbarLinks toggle={toggle} />
     </nav>
   )
 }

@@ -1,10 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import Navbar from "./navbar"
-import Hamburger from "./hamburger"
 import Sidebar from "./sidebar"
-// import { Wrapper, Overlay } from "./header"
 import { css } from "@emotion/core"
-import { container } from "../../../data/styles"
+import { containerInStyle, containerOutStyle } from "../../../data/styles"
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,9 +16,8 @@ class Header extends React.Component {
   }
 
   render() {
-    const Wrapper = css`
-      background: transparent;
-      width: 100%;
+    const headerStyle = css`
+      background-color: pink;
     `
 
     const overlay = css`
@@ -35,19 +32,14 @@ class Header extends React.Component {
          z-index: 4;
       `}
     `
-    const hamburgerStyle = css`
-      @media (min-width: 480px) {
-        display: none;
-      }
-    `
+
     return (
-      <header css={container}>
+      <header css={[containerOutStyle, headerStyle]}>
         <div css={overlay} onClick={this.handleClick}></div>
-        <Navbar />
-        <div css={hamburgerStyle} onClick={this.handleClick}>
-          <Hamburger status={this.state.isSidebarOn} />
+        <div css={containerInStyle}>
+          <Navbar status={this.state.isSidebarOn} toggle={this.handleClick} />
+          <Sidebar status={this.state.isSidebarOn} toggle={this.handleClick} />
         </div>
-        <Sidebar status={this.state.isSidebarOn} />
       </header>
     )
   }

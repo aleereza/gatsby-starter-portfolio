@@ -1,6 +1,10 @@
 import React from "react"
-import { container } from "../../data/styles"
+import { containerInStyle, containerOutStyle } from "../../data/styles"
 
-const Main = ({ children }) => <main css={container}>{children}</main>
+const Main = ({ children }) => (
+  <main css={containerOutStyle}>
+    <div css={containerInStyle}>{children}</div>
+  </main>
+)
 
 export default Main
