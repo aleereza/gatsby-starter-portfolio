@@ -12,7 +12,9 @@ export const containerInStyle = css`
 
 export const global = css`
   html {
-    font-family: "Roboto", Helvetica, sans-serif;
+    font: 112.5%/1.45em "Montserrat", sans-serif;
+    box-sizing: border-box;
+    overflow-y: scroll;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 
@@ -192,11 +194,7 @@ export const global = css`
       -webkit-appearance: button;
       font: inherit;
     }
-    html {
-      font: 112.5%/1.45em georgia, serif;
-      box-sizing: border-box;
-      overflow-y: scroll;
-    }
+
     * {
       box-sizing: inherit;
     }
@@ -612,7 +610,6 @@ export const global = css`
     body {
       margin: 0;
       padding: 0;
-      font-family: "Roboto", Helvetica, sans-serif;
       color: hsla(0, 0%, 0%, 0.8);
       font-weight: normal;
       word-wrap: break-word;
